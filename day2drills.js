@@ -36,20 +36,18 @@ function average(nums){
 
   nums.forEach(num => total += num);
   
-  console.log(total);
-  console.log(total / nums.length);
   return total / nums.length;
 }
 
-average([1,2,3,4,5,6,7,8,9,10]);
+//average([1,2,3,4,5,6,7,8,9,10]);
 
 function repeat(fn, n) {
   for (let i = 1; i <= n; i++) {
     console.log(fn());
   }
 }
-repeat(hello, 5);
-repeat(goodbye,5);
+//repeat(hello, 5);
+//repeat(goodbye,5);
 
 function hello() {
   return 'Hello world';
@@ -75,5 +73,37 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
-console.log(filteredNames) // => ['Rich', 'Ray']
+//console.log(filteredNames);// => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+
+function hazardWarningCreator(typeOfWarning){
+  let warningCounter = 0;
+
+  return function(location){
+    warningCounter++;
+
+    let once = 'time';
+    let multi = 'times';
+
+    if( warningCounter === 1){
+      console.log(`DANGER! There is a ${typeOfWarning} alert has triggered ${location}`);
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${once} today!`);
+    } if( warningCounter > 1){
+      console.log(`DANGER! There is a ${typeOfWarning} alert has triggered ${location}`);
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${multi} today!`);
+    }
+  };
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const iceWarning = hazardWarningCreator('Black ice on the Road');
+const floodWarning = hazardWarningCreator('Flooding across Road');
+rocksWarning('Main St and Pacific Ave');
+//rocksWarning('Centinela Ave and Olympic Blv');
+
+//iceWarning('Hall RD and West');
+//iceWarning('Hall RD and King');
+
+//floodWarning('Hall RD and West')
+//floodWarning('Hall RD and king')
