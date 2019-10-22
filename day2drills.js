@@ -42,3 +42,38 @@ function average(nums){
 }
 
 average([1,2,3,4,5,6,7,8,9,10]);
+
+function repeat(fn, n) {
+  for (let i = 1; i <= n; i++) {
+    console.log(fn());
+  }
+}
+repeat(hello, 5);
+repeat(goodbye,5);
+
+function hello() {
+  return 'Hello world';
+}
+function goodbye () {
+  return 'Goodbye world';
+}
+function filter(arr, fn) {
+  let newArray = [];
+  arr.filter(i => {
+    if (fn(i)) {
+      newArray.push(i);
+    }
+  });
+  return newArray; 
+}
+
+
+const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+
+
+const filteredNames = filter(myNames, function(name) {
+  return name[0] === 'R';
+});
+
+console.log(filteredNames) // => ['Rich', 'Ray']
+// <---- DO NOT EDIT BETWEEN THESE LINES
