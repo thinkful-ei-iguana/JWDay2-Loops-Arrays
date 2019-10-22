@@ -122,20 +122,17 @@ let codedMessage = 'noggin oreo the moon time tele steed his tent apollo her liv
 function decode(string){
   let arr = string.split(' ');
 
-  let newArray = [];
-
   arr.reduce((acc,str) => {
     if(str.length === 3){
-      newArray.push(acc += ' ');
+      acc += ' ';
       //console.log( acc + ' ');
     } else {
-      newArray.push(str[str.length - 1]. toUpperCase());
+      str[str.length - 1]. toUpperCase();
       //console.log(acc + str[str.length - 1].toUpperCase());
     }
   }, '');
 
-  console.log(newArray.join(''));
-  return newArray.join('');
+ 
 }
 
 decode(codedMessage);
