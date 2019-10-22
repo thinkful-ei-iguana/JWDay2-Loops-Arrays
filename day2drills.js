@@ -109,11 +109,33 @@
 //floodWarning('Hall RD and king')
 
 
-let turtleGrooves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
-turtleGrooves = turtleGrooves.filter(pair => pair[0] >= 0 && pair[1] >= 0);
-console.log(turtleGrooves);
+// let turtleGrooves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+// turtleGrooves = turtleGrooves.filter(pair => pair[0] >= 0 && pair[1] >= 0);
+// console.log(turtleGrooves);
 
-let distances = turtleGrooves.map(pair => pair[0] + pair[1]);
-distances.forEach(distance => {
-  console.log(distance);
-});
+// let distances = turtleGrooves.map(pair => pair[0] + pair[1]);
+// distances.forEach(distance => {
+//   console.log(distance);
+// });
+
+let codedMessage = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+function decode(string){
+  let arr = string.split(' ');
+
+  let newArray = [];
+
+  arr.reduce((acc,str) => {
+    if(str.length === 3){
+      newArray.push(acc += ' ');
+      //console.log( acc + ' ');
+    } else {
+      newArray.push(str[str.length - 1]. toUpperCase());
+      //console.log(acc + str[str.length - 1].toUpperCase());
+    }
+  }, '');
+
+  console.log(newArray.join(''));
+  return newArray.join('');
+}
+
+decode(codedMessage);
